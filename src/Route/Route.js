@@ -4,6 +4,8 @@ import Categories from "../pages/Categories/Categories";
 import Course from "../pages/Course/Course";
 import CourseDetails from "../pages/CourseDetails/CourseDetails";
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
+import Register from "../Register/Register";
 
 export const route = createBrowserRouter([
   {
@@ -34,6 +36,8 @@ export const route = createBrowserRouter([
           );
         },
       },
+      { path: "/login", element: <Login></Login> },
+      { path: "register", element: <Register></Register> },
     ],
   },
 ]);
