@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="p-2 bg-indigo-600">
-         <div className="navbar bg-base-100 container mx-auto bg-indigo-600">
+    <div className="p-2 bg-cyan-700">
+         <div className="navbar bg-base-100 container mx-auto bg-cyan-700">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Skilify</a>
       </div>
