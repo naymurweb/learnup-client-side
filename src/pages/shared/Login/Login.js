@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import loginImg from "../../../images/login.webp";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from "../../../UserContext/UserContext";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+
 const Login = () => {
+  const { userGoogleSign, userGithubSign } = useContext(AuthContext);
+
+  const googleClickHandeler = () => {
+    const googleProvider = new GoogleAuthProvider();
+
+    userGoogleSign(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const githubClickHandeler = () => {
+    const githubProvider = new GithubAuthProvider();
+    userGithubSign(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="container mx-auto">
       <div className="hero min-h-screen bg-base-200">
@@ -11,11 +37,17 @@ const Login = () => {
             <img src={loginImg} alt="" />
 
             <div className="text-center">
-              <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-accent mb-4">
+              <button
+                onClick={googleClickHandeler}
+                className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-accent mb-4"
+              >
                 <FaGoogle></FaGoogle> Continue with Google
               </button>
               <br />
-              <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-accent">
+              <button
+                onClick={githubClickHandeler}
+                className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-accent"
+              >
                 <FaGithub></FaGithub> Continue with Github
               </button>
             </div>
