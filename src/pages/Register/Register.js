@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import regImg from "../../images/reg-img-four.png";
+import { AuthContext } from "../../UserContext/UserContext";
 const Register = () => {
+  const {name}=useContext(AuthContext)
+  console.log(name);
   return (
     <div className="container mx-auto">
       <div className="hero min-h-screen bg-base-200">
