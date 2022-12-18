@@ -55,11 +55,8 @@ const Login = () => {
                 <button className="btn btn-primary mb-3">Login</button>
                 <p>
                   Don't have an account?
-                  <Link to="register">
-                    <button className="btn-success btn-active btn-link">
-                      Register
-                      {/* <p>Already a Member? Go to login</p> */}
-                    </button>
+                  <Link to="/register">
+                    <button className="btn btn-link">Register</button>
                   </Link>
                 </p>
               </div>

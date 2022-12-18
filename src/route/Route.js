@@ -19,7 +19,8 @@ export const route = createBrowserRouter([
       { path: "blog", element: <Blog></Blog> },
       { path: "faq", element: <Faq></Faq> },
       { path: "login", element: <Login></Login> },
-      { path: "login/register", element: <Register></Register> },
+      { path: "register", element: <Register></Register> },
+      
     ],
   },
   { path: "*", element: <Error></Error> },
