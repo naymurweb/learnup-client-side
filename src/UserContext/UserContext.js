@@ -1,9 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
+  createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 export const AuthContext = createContext();
@@ -18,6 +22,25 @@ const UserContext = ({ children }) => {
 
   const userGithubSign = (provider) => {
     return signInWithPopup(auth, provider);
+  };
+
+  const userCreate = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const userProfileUpdate = (userName, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: userName,
+      photoURL: photo,
+    });
+  };
+
+  const forgotPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
+  const userLogin = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
@@ -41,8 +64,16 @@ const UserContext = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-  const name = "mr pranto";
-  const userInfo = { name, userGoogleSign, userGithubSign, user,userLogout };
+  const userInfo = {
+    user,
+    userGoogleSign,
+    userGithubSign,
+    userLogout,
+    userCreate,
+    userProfileUpdate,
+    userLogin,
+    forgotPassword,
+  };
   return (
     <div>
       <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
