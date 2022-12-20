@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../../images/login.webp";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../../UserContext/UserContext";
@@ -9,6 +9,7 @@ const Login = () => {
   const { userGoogleSign, userGithubSign, forgotPassword, user, userLogin } =
     useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate=useNavigate()
 
   const googleClickHandeler = () => {
     const googleProvider = new GoogleAuthProvider();
@@ -41,6 +42,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate('/')
       })
       .catch((error) => {
         setError(error.message);

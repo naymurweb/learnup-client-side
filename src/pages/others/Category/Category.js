@@ -1,16 +1,15 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import Course from "../others/Course/Course";
+import Course from "../Course/Course";
 
-const Courses = () => {
-  const courses = useLoaderData();
-  console.log('dfisa',courses);
-
+const Category = () => {
+  const category = useLoaderData();
+//   console.log(category);
   return (
     <div className="grid grid-cols-5 container mx-auto">
       <div className="col-span-4 bg-red-200">
         <div className="grid grid-cols-3 p-4 gap-3">
-          {courses.map((data) => (
+          {category.map((data) => (
             <Course key={data.id} data={data}></Course>
           ))}
         </div>
@@ -24,7 +23,7 @@ const Courses = () => {
             </Link>
           </li>
           <li>
-            <Link to={`/category/english`}>English Language Learning</Link>
+            <Link to={` /category/english`}>English Language Learning</Link>
             <Link to={`/category/design`}>Design & Creative Courses</Link>
             <Link to={`/category/freelancing`}>Freelancing Courses</Link>
             <Link to={`/category/skills`}>Skills & IT Courses</Link>
@@ -35,4 +34,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Category;

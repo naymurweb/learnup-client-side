@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import regImg from "../../images/reg-img-four.png";
 import { AuthContext } from "../../UserContext/UserContext";
 
 const Register = () => {
   const { userCreate, userProfileUpdate, user } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+const navigate=useNavigate()
 
   const registerBtnHandal = (event) => {
     event.preventDefault();
@@ -21,6 +23,7 @@ const Register = () => {
         userProfileUpdate(userName, photoURL);
         console.log(user);
         form.reset();
+        navigate('/')
       })
       .catch((error) => setError(error.message));
   };
@@ -98,16 +101,12 @@ const Register = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary mb-3">Register</button>
                 <div>
-                  {user.email ? (
-                    <p>
-                      Already have an Account?
-                      <Link to="/login">
-                        <button className="btn btn-link">Login</button>
-                      </Link>
-                    </p>
-                  ) : (
-                    <p>Don't have an account?</p>
-                  )}
+                  <p>
+                    Already have an Account?
+                    <Link to="/login">
+                      <button className="btn btn-link">Login</button>
+                    </Link>
+                  </p>
                 </div>
               </div>
             </form>
