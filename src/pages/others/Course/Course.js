@@ -5,7 +5,7 @@ const Course = ({ data }) => {
   const { img, title, about,id } = data;
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl py-4">
+    <div className="card w-96 bg-blue-900 shadow-xl py-4">
       <figure>
         <img src={img} alt="Shoes" />
       </figure>

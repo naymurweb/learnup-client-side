@@ -16,7 +16,7 @@ const CourseDetails = () => {
           <div className="card-actions justify-end mr-5">
             <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
               <button className="mr-4 btn btn-active">Download</button>
-              <Link to={`/premium/courses/${id}`}>
+              <Link to={`premium/courses/${id}`}>
               <button class="btn mr-1">Premium Access</button>
               </Link>
               <Link to="/courses">

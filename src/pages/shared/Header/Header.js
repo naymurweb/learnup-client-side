@@ -10,8 +10,8 @@ const Header = () => {
     userLogout();
   };
   return (
-    <div className="border-b-2 border-slate-700 ">
-      <div className="navbar bg-base-100 container mx-auto  ">
+    <div className="border-b-2 border-slate-700 bg-primary">
+      <div className="navbar bg-base-100 container mx-auto bg-primary">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,7 +52,7 @@ const Header = () => {
             <img src={logo} alt="" />
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex text-base text-white font-semibold">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to="/home">Home</Link>
@@ -76,7 +76,7 @@ const Header = () => {
 
           {user.email ? (
             <div className="tooltip tooltip-left" data-tip={user.displayName}>
-              <div className="navbar bg-base-100 w-0  ">
+              <div className="navbar  w-0  ">
                 <div className="flex-none gap-2">
                   <div className="dropdown dropdown-end">
                     <label

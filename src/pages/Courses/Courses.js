@@ -4,20 +4,19 @@ import Course from "../others/Course/Course";
 
 const Courses = () => {
   const courses = useLoaderData();
-  console.log('dfisa',courses);
 
   return (
-    <div className="grid grid-cols-5 container mx-auto">
-      <div className="col-span-4 bg-red-200">
-        <div className="grid grid-cols-3 p-4 gap-3">
+    <div className="grid lg:grid-cols-5 container mx-auto">
+      <div className="col-span-4 bg-blue-500">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-4 gap-3">
           {courses.map((data) => (
             <Course key={data.id} data={data}></Course>
           ))}
         </div>
       </div>
 
-      <div className="col-span-1 bg-green-200 p-4">
-        <ul className="menu bg-base-100 w-full">
+      <div className="lg:col-span-1 col-span-2 bg-blue-400 p-4 ">
+        <ul className="menu bg-blue-900 w-full card  shadow-xl lg:sticky top-3">
           <li>
             <Link to={`/category/all`} className="active">
               ALL Skills Learning Courses

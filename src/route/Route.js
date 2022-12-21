@@ -17,8 +17,16 @@ export const route = createBrowserRouter([
     path: "/",
     element: <Main></Main>,
     children: [
-      { path: "/", element: <Home></Home> },
-      { path: "home", element: <Home></Home> },
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("https://learnup-hazel.vercel.app/courses"),
+      },
+      {
+        path: "home",
+        element: <Home></Home>,
+        loader: () => fetch("https://learnup-hazel.vercel.app/courses"),
+      },
       {
         path: "courses",
         element: <Courses></Courses>,
@@ -42,13 +50,16 @@ export const route = createBrowserRouter([
           fetch(`https://learnup-hazel.vercel.app/courses/${params.id}`),
       },
       {
-        path:'/premium/courses/:id',element:<PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
+        path: "/premium/courses/:id",
+        element: (
+          <PrivateRoute>
+            <PremiumAccess></PremiumAccess>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-        fetch(`https://learnup-hazel.vercel.app/courses/${params.id}`),
-        
-      }
+          fetch(`https://learnup-hazel.vercel.app/courses/${params.id}`),
+      },
     ],
-   
   },
   { path: "*", element: <Error></Error> },
 ]);
