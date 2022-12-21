@@ -15,6 +15,7 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState("");
+  const [loading,setLoding]=useState(true)
 
   const userGoogleSign = (provider) => {
     return signInWithPopup(auth, provider);
@@ -47,6 +48,7 @@ const UserContext = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        setLoding(false)
       } else {
         console.log("user sign out!");
       }
@@ -73,6 +75,7 @@ const UserContext = ({ children }) => {
     userProfileUpdate,
     userLogin,
     forgotPassword,
+    loading
   };
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../../images/login.webp";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../../UserContext/UserContext";
@@ -11,12 +11,16 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate=useNavigate()
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
   const googleClickHandeler = () => {
     const googleProvider = new GoogleAuthProvider();
     userGoogleSign(googleProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, {replace: true});
       })
       .catch((error) => console.log(error));
   };
@@ -27,6 +31,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, {replace: true});
       })
       .catch((error) => console.log(error));
   };
@@ -42,7 +47,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate('/')
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         setError(error.message);
