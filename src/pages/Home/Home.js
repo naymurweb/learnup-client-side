@@ -4,7 +4,6 @@ import bg from "../../images/header-bkg.jpg";
 import Course from "../others/Course/Course";
 const Home = () => {
   const data = useLoaderData();
-  console.log(data);
   return (
    <div>
      <div
@@ -21,8 +20,7 @@ const Home = () => {
             Learn from the best <br /> learning platform
           </h1>
           <p className="mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Start, switch, or advance your career with more than 15 courses, Professional Certificates, <br></br> and degrees from world-class universities and companies.
           </p>
           <Link to="/courses">
             <button className="btn btn-primary">Our Courses</button>
@@ -31,7 +29,7 @@ const Home = () => {
       </div>
     </div>
     
-   <div className="bg-primary py-40">
+   <div className="bg-violet-900 py-40">
     <h2 className="py-7 text-5xl font-semibold text-center text-white" >Our Popular Courses</h2>
    <div className="grid lg:grid-cols-5 container mx-auto">
       <div className="col-span-5 ">

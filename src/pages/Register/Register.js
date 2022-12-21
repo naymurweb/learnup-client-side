@@ -29,7 +29,7 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-violet-800">
+    <div className="bg-violet-900">
       <div className="container mx-auto">
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col lg:flex-row-reverse">
