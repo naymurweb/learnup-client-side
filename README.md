@@ -3,16 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Libraries and Frameworks
-React Js (create-react-app)
-React Router
-Axios
-React Query
-firebase
-React Firebase Hook
-React Hook Form
-React Confirm Alert
-React Hot Toast
-Font Awesome
+React Js (create-react-app)\
+React Router\
+firebase\
+React Firebase Hook\
+Font Awesome\
+tailwind\
+daisyUi\
 
 In the project directory, you can run:
 
