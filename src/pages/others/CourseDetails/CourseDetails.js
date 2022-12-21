@@ -4,8 +4,9 @@ import { Link, useLoaderData } from "react-router-dom";
 const CourseDetails = () => {
   const { img, title, about,id } = useLoaderData();
   return (
-    <div className="container mx-auto my-14 border border-slate-300 ">
-      <div className="card lg:card-side bg-base-100 shadow-xl">
+   <div className="bg-blue-500">
+     <div className="container mx-auto lg:py-40">
+      <div className="card lg:card-side bg-blue-900 shadow-xl">
         <figure className="lg:w-2/4 w-full">
           <img src={img} alt="Album" />
         </figure>
@@ -27,6 +28,7 @@ const CourseDetails = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

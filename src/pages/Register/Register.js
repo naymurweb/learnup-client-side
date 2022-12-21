@@ -7,7 +7,7 @@ const Register = () => {
   const { userCreate, userProfileUpdate, user } = useContext(AuthContext);
   const [error, setError] = useState("");
 
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const registerBtnHandal = (event) => {
     event.preventDefault();
@@ -23,93 +23,95 @@ const navigate=useNavigate()
         userProfileUpdate(userName, photoURL);
         console.log(user);
         form.reset();
-        navigate('/')
+        navigate("/");
       })
       .catch((error) => setError(error.message));
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left order-2 lg:order-1">
-            <img src={regImg} alt="" />
+    <div className="bg-violet-800">
+      <div className="container mx-auto">
+        <div className="hero min-h-screen ">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <img src={regImg} alt="" />
 
-            <div className="text-center"></div>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-16 order-1 lg:order-2 ">
-            <form className="card-body" onSubmit={registerBtnHandal}>
-              <h1 className="text-4xl font-bold ">Register Your Account</h1>
-              <p className="py-4 ">
-                Inter your valid email address and password to register your
-                account
-              </p>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">User Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="User Name"
-                  className="input input-bordered"
-                  name="name"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">PhotoURL</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="PhotoURL"
-                  className="input input-bordered"
-                  name="photo"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                  name="email"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  name="password"
-                  required
-                />
-              </div>
-              <div>
-                {error.length !== 0 ? (
-                  <small className="text-red-400">{error}</small>
-                ) : (
-                  <small></small>
-                )}
-              </div>
-
-              <div className="form-control mt-6">
-                <button className="btn btn-primary mb-3">Register</button>
-                <div>
-                  <p>
-                    Already have an Account?
-                    <Link to="/login">
-                      <button className="btn btn-link">Login</button>
-                    </Link>
-                  </p>
+              <div className="text-center"></div>
+            </div>
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-900 mt-16 order-1 lg:order-2 ">
+              <form className="card-body" onSubmit={registerBtnHandal}>
+                <h1 className="text-4xl font-bold ">Register Your Account</h1>
+                <p className="py-4 ">
+                  Inter your valid email address and password to register your
+                  account
+                </p>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">User Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="User Name"
+                    className="input input-bordered"
+                    name="name"
+                  />
                 </div>
-              </div>
-            </form>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">PhotoURL</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="PhotoURL"
+                    className="input input-bordered"
+                    name="photo"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="email"
+                    className="input input-bordered"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="password"
+                    className="input input-bordered"
+                    name="password"
+                    required
+                  />
+                </div>
+                <div>
+                  {error.length !== 0 ? (
+                    <small className="text-red-400">{error}</small>
+                  ) : (
+                    <small></small>
+                  )}
+                </div>
+
+                <div className="form-control mt-6">
+                  <button className="btn btn-primary mb-3">Register</button>
+                  <div>
+                    <p>
+                      Already have an Account?
+                      <Link to="/login">
+                        <button className="btn btn-link">Login</button>
+                      </Link>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

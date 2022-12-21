@@ -62,8 +62,9 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="container mx-auto">
-      <div className="hero min-h-screen bg-base-200">
+    <div className="bg-violet-800">
+      <div className="container mx-auto">
+      <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left order-2 lg:order-1">
             <img src={loginImg} alt="" />
@@ -84,7 +85,7 @@ const Login = () => {
               </button>
             </div>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-16 order-1 lg:order-2 ">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-900 mt-16 order-1 lg:order-2 ">
             <form className="card-body" onSubmit={loginHandaler}>
               <h1 className="text-4xl font-bold">Login now!</h1>
               <p className="py-4">
@@ -149,6 +150,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

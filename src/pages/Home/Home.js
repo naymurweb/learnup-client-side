@@ -31,7 +31,7 @@ const Home = () => {
       </div>
     </div>
     
-   <div className="bg-primary">
+   <div className="bg-primary py-40">
     <h2 className="py-7 text-5xl font-semibold text-center text-white" >Our Popular Courses</h2>
    <div className="grid lg:grid-cols-5 container mx-auto">
       <div className="col-span-5 ">
@@ -41,22 +41,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      {/* <div className="lg:col-span-1 col-span-2 bg-blue-400 p-4 ">
-        <ul className="menu bg-blue-900 w-full card  shadow-xl lg:sticky top-3">
-          <li>
-            <Link to={`/category/all`} className="active">
-              ALL Skills Learning Courses
-            </Link>
-          </li>
-          <li>
-            <Link to={`/category/english`}>English Language Learning</Link>
-            <Link to={`/category/design`}>Design & Creative Courses</Link>
-            <Link to={`/category/freelancing`}>Freelancing Courses</Link>
-            <Link to={`/category/skills`}>Skills & IT Courses</Link>
-          </li>
-        </ul>
-      </div> */}
     </div>
    </div>
    </div>
