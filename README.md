@@ -2,7 +2,7 @@
 
  Live website link: (https://learnup-1b0ae.web.app/)\
  
- Server side repo link:(https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-naymurweb)
+ Server side repo link:(https://github.com/naymurweb/learnup-server-side)
 
 
 ## Libraries and Frameworks
