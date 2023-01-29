@@ -1,6 +1,6 @@
 # Website Purpose
 
- Live website link: (https://learnup-1b0ae.web.app/)\
+ Live website link: (https://learnup-1b0ae.web.app/)
  
  Server side repo link:(https://github.com/naymurweb/learnup-server-side)
 
